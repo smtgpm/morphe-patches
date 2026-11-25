@@ -55,14 +55,11 @@ build. A game update needs the addresses to be derived again (see [docs/belote.m
 ## 🩹 Patches list
 
 <!-- PATCHES_START -->
+> **[v1.0.0-dev.1](https://github.com/smtgpm/morphe-patches-smtgpm/releases/tag/v1.0.0-dev.1)**&nbsp;&nbsp;&middot;&nbsp;&nbsp;`dev`&nbsp;&nbsp;&middot;&nbsp;&nbsp;**7 patches** across **1 app**&nbsp;&nbsp;&middot;&nbsp;&nbsp;[Full details](PATCHES.md)
 
-<!-- Do not modify this section by hand. The patch list is generated when release.yml creates a new release.
-
-     This section shows one row for each app. The details of each patch are in PATCHES.md,
-     which is generated at the same time. -->
-
-#### The generated patch list appears here after the first release.
-
+| # | App | Patches | Version | Package |
+|---|---|---|---|---|
+| 1 | [**Belote.com**](PATCHES.md#belotecom-comgameduellmobilebelote) | 7 | `2.12.9` | [`com.gameduell.mobile.belote`](https://play.google.com/store/apps/details?id=com.gameduell.mobile.belote) |
 <!-- PATCHES_END -->
 
 ## 🛠️ Building locally
