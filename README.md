@@ -1,105 +1,95 @@
-# 👋🧩 Morphe Patches template
+# 🧩 smtgpm patches
 
-Template repository for Morphe Patches.
+Patches for **Belote.com** (`com.gameduell.mobile.belote`), for use with [Morphe](https://morphe.software).
 
 ## ❓ About
 
-Patches for apps I like.
+Quality-of-life patches for the Unity card game Belote.com: the daily bonus is claimed for you,
+collection packs open by themselves and fast, the forced ads are gone, and the game loads
+reliably behind a VPN. Google sign-in keeps working through MicroG-RE.
 
-<!-- TODO: Update this about section with a brief introduction/summary about this repo and what it offers. -->
+Every patch can be selected on its own in Morphe Manager.
 
-### How to use these patches
+| Patch | What it does |
+|---|---|
+| Claim daily bonus automatically | Claims the free daily wheel spin in the background as soon as it is ready, without opening the wheel. |
+| Auto-collect daily wheel | Opening the daily wheel with a free spin spins it, collects the chips and closes it. |
+| Auto-open packs | Opening "My packs" opens every unopened collection pack one after another. |
+| Fast pack opening | Shows all cards of a pack at once and skips the pauses between packs. |
+| Remove ads | Removes the full-screen ads before Solo games. Optional reward videos stay. |
+| Fast startup on VPN | Stops the loading screen from hanging when a download stalls, e.g. behind a VPN. |
+| MicroG-RE support | Allows Google sign-in through MicroG-RE (needed after patching). |
 
-Click the button below, or manually add this repo url to Morphe Manager: https://github.com/xyz-user/xyz-patches
+### Supported version
 
-<a href="https://morphe.software/add-source?github=xyz-user/xyz-patches">
-  <img src=".github/assets/add-to-morphe.svg" alt="Add to Morphe" height="48">
-</a>
+**Belote.com 2.12.9 (versionCode 2216), arm64-v8a.** The game logic is compiled native code,
+so most patches change instructions at fixed addresses of this exact build. The patches check
+the version and the native library's SHA-256 first and stop with a clear error on any other
+build. A game update needs the addresses to be derived again (see [docs/belote.md](docs/belote.md)).
+
+## 🚀 How to use
+
+1. Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases) on your phone and sign in
+   to your Google account there (needed for "Login with Google").
+2. Add this repository to Morphe Manager: tap the button below, or add
+   `https://github.com/smtgpm/morphe-patches-smtgpm` as a patch source.
+
+   <a href="https://morphe.software/add-source?github=smtgpm/morphe-patches-smtgpm">
+     <img src=".github/assets/add-to-morphe.svg" alt="Add to Morphe" height="48">
+   </a>
+
+3. Get the original 2.12.9 split APK, either as an `.apkm` from APKMirror, or from a phone
+   where it is installed:
+
+   ```bash
+   adb shell pm path com.gameduell.mobile.belote   # lists base.apk and split_config.arm64_v8a.apk
+   adb pull <path>/base.apk
+   adb pull <path>/split_config.arm64_v8a.apk
+   zip -0 belote-2.12.9.apkm base.apk split_config.arm64_v8a.apk
+   ```
+
+4. In Morphe Manager, select the APKM, pick the patches you want, and patch.
+5. The patched app has a different signature, so **uninstall the original first**. Link your
+   progress to Google or Facebook before you do, then sign in again after installing.
 
 ## 🩹 Patches list
 
 <!-- PATCHES_START -->
+> **[v1.0.0-dev.1](https://github.com/smtgpm/morphe-patches-smtgpm/releases/tag/v1.0.0-dev.1)**&nbsp;&nbsp;&middot;&nbsp;&nbsp;`dev`&nbsp;&nbsp;&middot;&nbsp;&nbsp;**7 patches** across **1 app**&nbsp;&nbsp;&middot;&nbsp;&nbsp;[Full details](PATCHES.md)
 
-<!-- Do not modify this section by hand. The patch list is generated when release.yml creates a new release.
-     
-     This section shows one row for each app. The details of each patch are in PATCHES.md,
-     which is generated at the same time.
-
-     If you wish to manually keep this list updated then remove the PATCHES_START and PATCHES_END 
-     comment blocks entirely. -->
-
-#### A list of your patches will automatically be shown here after your first patches release is created.
-
-&nbsp;
-
-## 🚀 Getting development started
-
-To start using this template, follow these steps:
-
-1. [Setup](https://github.com/MorpheApp/morphe-documentation/blob/main/docs/morphe-development/README.md) your development environment including adding a GitHub PAT as described [here](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/2_1_setup.md#-prepare-the-environment).
-2. [Create a new repository using this template](https://github.com/new?template_name=morphe-patches-template&template_owner=MorpheApp). Select create a new repository, and **enable 'Include all branches'** 
-3. Enable "Allow GitHub Actions to create and approve pull requests" in your repo Settings > Actions > General > Workflow permissions
-4. Update the [build.gradle.kts](patches/build.gradle.kts) file (Specifically, the 
-   [group of the project](patches/build.gradle.kts#L1), and the [About](patches/build.gradle.kts#L6-L11))
-5. Update the [README.md](README.md) file to be specific of your repo, and update the links in the [issue templates](.github/ISSUE_TEMPLATE).
-6. Choose a name for your patches project. Keep in mind you must use a name that does not 
-   imply authorship by the Morphe open source project. If unsure, then simply name these
-   patches after yourself ("UserXYZ Morphe patches"). See the [NOTICE](NOTICE) for details. 
-7. (Optional): Add `patches-bundle.png` to the project if you want a custom icon to show in
-   Morphe Manager instead of your GitHub profile avatar.
-8. (Optional): Set `INCLUDE_APP_ICONS = True` in [generate_patches_readme.py](.github/scripts/generate_patches_readme.py) to show app icons in the generated patches list.
-9. (Optional): Sign your releases, so Morphe Manager refuses a release that was changed or swapped after you published it:
-   1. Run `./gradlew generateSigningKey`. It creates `morphe-signing.pub` and `morphe-signing.key`.
-   2. Commit `morphe-signing.pub`. Never commit `morphe-signing.key`, it is already ignored by git.
-   3. Add the content of `morphe-signing.key` as the `MORPHE_SIGNING_KEY` secret in your repo
-      Settings > Secrets and variables > Actions, then keep a backup of it somewhere safe and delete the file.
-
-   Every release is signed from then on. If you lose the key or it leaks, create a new one the same way;
-   users then have to confirm the new key in Morphe Manager before they get your next release.
-
-🎉 You are now ready to start creating patches!
-
-## 🧑‍💻 Dev usage
-
-To develop and release your Patches using this template:
-
-- **Make all changes to the `dev` branch.**
-- For local development work build your patches using the gradle task `./gradlew buildAndroid` to generate the mpp file found in `patches/build/libs/patches-*.mpp`. Apply your patches locally using Morphe Desktop tool like any other patch bundle.
-- Always use [Semantic commit](https://kapeli.com/cheat_sheets/Semantic_Commits.docset/Contents/Resources/Documents/index) messages for commits. To keep it simple use only 3 commit message types: 
-  - `feat: Added a new feature`
-  - `fix: Some problem now fixed`
-  - `chore: Random change you do not want in the user facing changelog`
-- Commits of `fix:` and `feat:` will automatically generate new pre-releases and `chore:` will not create a new release.
-- Users can apply your dev branch releases by enabling `pre-release` in Morphe Manager patch sources.
-- When your dev branch is ready, and you want a stable release, merge dev branch to main (do not squash, and only merge).
-- **Always use semantic release (release.yml)**. Do not manually upload or create releases by hand
-  because many files must be updated and release.yml handles everything.
-
-## 🤓 Tips
-- See the [patcher documentation](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/1_patcher_intro.md) for more examples of creating patches and fingerprints.
-- Do not use AI to create new release scripts. The `release.yml` here already handles everything.
-  If you need something custom with your releases then modify the existing `release.yml`
-  and `.releaserc` instead of writing everything new from scratch.
-- Do not manually edit or manually commit any generated files such as: `patches-list.json`,
-  `patches-bundle.json`, `PATCHES.md`, `CHANGELOG.md`.  These files will be automatically updated by `release.yml`.
-- Do not force push any semantic release commits as that will break all future releases.
-  If you need to fix a broken release, it's always easiest to create a new release instead of 
-  fixing an existing release.
-
-
-<!-- The patches end tag is intentionally placed here so the first release will clean up 
-     this readme of all developer instructions above. -->
+| # | App | Patches | Version | Package |
+|---|---|---|---|---|
+| 1 | [**Belote.com**](PATCHES.md#belotecom-comgameduellmobilebelote) | 7 | `2.12.9` | [`com.gameduell.mobile.belote`](https://play.google.com/store/apps/details?id=com.gameduell.mobile.belote) |
 <!-- PATCHES_END -->
 
-### 🛠️ Building locally
+## 🛠️ Building locally
 
-- Run `./gradlew buildAndroid`
-- The built patches .mpp file is found in `patches/build/libs/patches-*.mpp`
-- Patch the mpp file using [Morphe-Desktop](https://github.com/MorpheApp/morphe-desktop)
-  like any other patch bundle.
+- Run `./gradlew buildAndroid`. The bundle is written to `patches/build/libs/patches-*.mpp`.
+- Patch with [Morphe Desktop](https://github.com/MorpheApp/morphe-desktop) like any other bundle:
 
-See the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation) for more information.
+  ```bash
+  java -jar morphe-desktop.jar patch -p patches/build/libs/patches-<version>.mpp belote-2.12.9.apkm
+  ```
+
+- The native hook code lives in [native/belote](native/belote). After changing it, run
+  `python3 native/belote/build.py` (needs `clang-18` and `ld.lld`) to regenerate
+  `patches/src/main/kotlin/app/smtgpm/patches/belote/shared/NativeData.kt`, and commit both.
+
+How the patches work, the addresses they use and how each one was tested are described in
+[docs/belote.md](docs/belote.md).
+
+## 🧑‍💻 Releases
+
+Work happens on `dev` with [semantic commits](https://www.conventionalcommits.org/)
+(`feat:`, `fix:`, `chore:`). `feat:` and `fix:` commits publish a pre-release from `dev`
+(enable pre-releases for this source in Morphe Manager), and merging `dev` into `main`
+publishes a stable release. Releases are created by [release.yml](.github/workflows/release.yml) only.
+
+## ⚠️ Disclaimer
+
+This project is not affiliated with GameDuell or the Morphe project. Patching changes the
+game client and may break the game's terms of service. Use it at your own risk.
 
 ## 📜 License
 
-UserXYZ Patches are licensed under the [GNU General Public License v3.0](LICENSE)
+smtgpm patches are licensed under the [GNU General Public License v3.0](LICENSE).
