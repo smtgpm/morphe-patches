@@ -10,17 +10,16 @@ plugins {
     alias(libs.plugins.animalsniffer)
 }
 
-group = "app.template"
+group = "app.smtgpm"
 
 patches {
-    // TODO: Update this section with your project details.
     about {
-        name = "UserXYZ Patches"
-        description = "Patches for apps I like"
-        source = "git@github.com:UserXYZ/morphe-patches.git"
-        author = "Awesome dev"
-        contact = "na"
-        website = "na"
+        name = "smtgpm patches"
+        description = "Patches for Belote.com, for use with Morphe"
+        source = "git@github.com:smtgpm/morphe-patches.git"
+        author = "smtgpm"
+        contact = "https://github.com/smtgpm/morphe-patches/issues"
+        website = "https://github.com/smtgpm/morphe-patches"
         license = "GPLv3"
     }
 }
