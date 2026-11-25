@@ -1,6 +1,6 @@
 /*
  * Copyright 2026 smtgpm.
- * https://github.com/smtgpm/morphe-patches
+ * https://github.com/smtgpm/morphe-patches-smtgpm
  *
  * Belote.com 2.12.9 (2216) arm64 hooks for the daily bonus patches:
  *  - "Auto-collect daily wheel": spin, collect and close an opened wheel.

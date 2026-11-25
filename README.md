@@ -32,9 +32,9 @@ build. A game update needs the addresses to be derived again (see [docs/belote.m
 1. Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases) on your phone and sign in
    to your Google account there (needed for "Login with Google").
 2. Add this repository to Morphe Manager: tap the button below, or add
-   `https://github.com/smtgpm/morphe-patches` as a patch source.
+   `https://github.com/smtgpm/morphe-patches-smtgpm` as a patch source.
 
-   <a href="https://morphe.software/add-source?github=smtgpm/morphe-patches">
+   <a href="https://morphe.software/add-source?github=smtgpm/morphe-patches-smtgpm">
      <img src=".github/assets/add-to-morphe.svg" alt="Add to Morphe" height="48">
    </a>
 

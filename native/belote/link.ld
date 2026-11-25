@@ -1,5 +1,5 @@
 /*
- * Copyright 2026 smtgpm. https://github.com/smtgpm/morphe-patches
+ * Copyright 2026 smtgpm. https://github.com/smtgpm/morphe-patches-smtgpm
  *
  * Belote.com 2.12.9 (2216) arm64 libil2cpp.so virtual addresses.
  */

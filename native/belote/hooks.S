@@ -1,4 +1,4 @@
-// Copyright 2026 smtgpm. https://github.com/smtgpm/morphe-patches
+// Copyright 2026 smtgpm. https://github.com/smtgpm/morphe-patches-smtgpm
 //
 // Trampolines: replay each hooked function's displaced first instruction,
 // then continue at its second instruction. All displaced instructions are

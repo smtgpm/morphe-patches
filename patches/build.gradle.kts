@@ -16,10 +16,10 @@ patches {
     about {
         name = "smtgpm patches"
         description = "Patches for Belote.com, for use with Morphe"
-        source = "git@github.com:smtgpm/morphe-patches.git"
+        source = "git@github.com:smtgpm/morphe-patches-smtgpm.git"
         author = "smtgpm"
-        contact = "https://github.com/smtgpm/morphe-patches/issues"
-        website = "https://github.com/smtgpm/morphe-patches"
+        contact = "https://github.com/smtgpm/morphe-patches-smtgpm/issues"
+        website = "https://github.com/smtgpm/morphe-patches-smtgpm"
         license = "GPLv3"
     }
 }

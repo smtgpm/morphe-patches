@@ -6,7 +6,7 @@ Compiles hooks.c + hooks.S, links them at the cave address from link.ld, and wri
 patches/.../belote/shared/NativeData.kt with the payload, the hook branches and every
 instruction edit together with the original instruction the patch expects.
 
-Copyright 2026 smtgpm. https://github.com/smtgpm/morphe-patches
+Copyright 2026 smtgpm. https://github.com/smtgpm/morphe-patches-smtgpm
 """
 import pathlib, struct, subprocess, tempfile, base64, re
 here = pathlib.Path(__file__).resolve().parent
@@ -102,7 +102,7 @@ def kt_edits(items):
 kt = [
     '/*',
     ' * Copyright 2026 smtgpm.',
-    ' * https://github.com/smtgpm/morphe-patches',
+    ' * https://github.com/smtgpm/morphe-patches-smtgpm',
     ' *',
     ' * See the included NOTICE file for GPLv3 Section 7 terms.',
     ' */',

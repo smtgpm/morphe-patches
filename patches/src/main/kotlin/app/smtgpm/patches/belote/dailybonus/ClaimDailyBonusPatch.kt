@@ -1,6 +1,6 @@
 /*
  * Copyright 2026 smtgpm.
- * https://github.com/smtgpm/morphe-patches
+ * https://github.com/smtgpm/morphe-patches-smtgpm
  *
  * See the included NOTICE file for GPLv3 Section 7 terms.
  */
