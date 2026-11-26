@@ -56,7 +56,7 @@ build. A game update needs the addresses to be derived again (see [docs/belote.m
 ## 🩹 Patches list
 
 <!-- PATCHES_START -->
-> **[v1.1.0-dev.2](https://github.com/smtgpm/morphe-patches-smtgpm/releases/tag/v1.1.0-dev.2)**&nbsp;&nbsp;&middot;&nbsp;&nbsp;`dev`&nbsp;&nbsp;&middot;&nbsp;&nbsp;**8 patches** across **1 app**&nbsp;&nbsp;&middot;&nbsp;&nbsp;[Full details](PATCHES.md)
+> **[v1.1.0](https://github.com/smtgpm/morphe-patches-smtgpm/releases/tag/v1.1.0)**&nbsp;&nbsp;&middot;&nbsp;&nbsp;`main`&nbsp;&nbsp;&middot;&nbsp;&nbsp;**8 patches** across **1 app**&nbsp;&nbsp;&middot;&nbsp;&nbsp;[Full details](PATCHES.md)
 
 | # | App | Patches | Version | Package |
 |---|---|---|---|---|
