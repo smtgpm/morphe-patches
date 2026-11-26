@@ -1,3 +1,9 @@
+## [1.1.0-dev.1](https://github.com/smtgpm/morphe-patches-smtgpm/compare/v1.0.0...v1.1.0-dev.1) (2026-11-26)
+
+### ✨ New Features
+
+* Count up the chips after the daily claim, speed up star packs ([aba5c3a](https://github.com/smtgpm/morphe-patches-smtgpm/commit/aba5c3a09aa92949b73c9b41cce2fb0cd5f500cf))
+
 ## 1.0.0 (2026-11-25)
 
 ### ✨ New Features
