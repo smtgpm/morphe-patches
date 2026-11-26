@@ -1,6 +1,6 @@
 # Patches
 
-> Generated from `patches-list.json` — **v1.1.0-dev.1** (`dev`) · **7 patches** across **1 app** · back to [README](README.md)
+> Generated from `patches-list.json` — **v1.1.0-dev.2** (`dev`) · **8 patches** across **1 app** · back to [README](README.md)
 
 ---
 
@@ -17,5 +17,6 @@
 | **Fast startup on VPN** | Stops the loading screen from hanging when a download stalls, e.g. behind a VPN. |
 | **MicroG-RE support** | Allows Google sign-in through MicroG-RE (needed after patching). |
 | **Remove ads** | Removes the full-screen ads before Solo games. Optional reward videos stay. |
+| **Rotate in both landscape directions** | The game turns with the phone when it is held upside down in landscape. |
 
 ---
