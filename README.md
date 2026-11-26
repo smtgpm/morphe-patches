@@ -18,6 +18,7 @@ Every patch can be selected on its own in Morphe Manager.
 | Fast pack opening | Shows all cards of a pack at once and skips the pauses between packs, star packs included. |
 | Remove ads | Removes the full-screen ads before Solo games. Optional reward videos stay. |
 | Fast startup on VPN | Stops the loading screen from hanging when a download stalls, e.g. behind a VPN. |
+| Rotate in both landscape directions | The game turns with the phone when it is held upside down in landscape. |
 | MicroG-RE support | Allows Google sign-in through MicroG-RE (needed after patching). |
 
 ### Supported version
